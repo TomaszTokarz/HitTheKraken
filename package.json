@@ -1,0 +1,49 @@
+{
+    "name": "hitthekraken",
+    "version": "0.1.0",
+    "description": "Hit the KRAKEN",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack",
+        "dev-server": "webpack-dev-server",
+        "lint": "eslint src",
+        "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TomaszTokarz/HitTheKraken.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/TomaszTokarz/HitTheKraken/issues"
+    },
+    "homepage": "https://github.com/TomaszTokarz/HitTheKraken#readme",
+    "dependencies": {
+        "firebase": "7.2.1",
+        "react": "16.8.4",
+        "react-dom": "16.8.4",
+        "react-redux": "7.0.3",
+        "react-router-dom": "4.3.1",
+        "redux": "4.0.1",
+        "styled-components": "4.2.0",
+        "styled-icons": "7.6.0"
+    },
+    "devDependencies": {
+        "babel-cli": "6.26.0",
+        "babel-core": "6.26.3",
+        "babel-eslint": "^9.0.0",
+        "babel-loader": "7.1.5",
+        "babel-plugin-transform-class-properties": "6.24.1",
+        "babel-plugin-transform-object-rest-spread": "6.26.0",
+        "babel-preset-env": "1.5.2",
+        "babel-preset-react": "6.24.1",
+        "eslint": "^5.15.2",
+        "eslint-plugin-mocha": "^6.2.0",
+        "eslint-plugin-react": "^7.12.4",
+        "prettier": "^1.18.2",
+        "webpack": "4.29.6",
+        "webpack-cli": "3.3.0",
+        "webpack-dev-server": "3.2.1"
+    }
+}
