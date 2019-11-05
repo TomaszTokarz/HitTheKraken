@@ -13,30 +13,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const database = firebase.database();
+const logOut = () => {
+    firebase.auth().signOut();
+};
 
-// let email = 'test@test.com';
-// let password = 'test';
-
-// Log in
-// firebase.auth().signInWithEmailAndPassword(email, password).then((info) => {
-//     console.log('Successfully logged in');
-// }).catch(function(error) {
-//     console.log(error);
-// });
-
-// Create Account
-// firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-//     console.log('Account created');
-// }).catch(function(error) {
-//     console.log(error);
-// });
-
-// Save to DB
-// database.ref().set({
-//     test: 'test'
-// }).then(() => {
-//     console.log('Saved');
-// }).catch((e) => {
-//     console.log('Failed: ', e);
-// });
+export { firebase, logOut };

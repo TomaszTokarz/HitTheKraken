@@ -14,6 +14,12 @@
         "sourceType": "module"
     },
     "plugins": ["react"],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "16.0"
+        }
+    },
     "rules": {
         "no-const-assign": "warn",
         "no-this-before-super": "warn",

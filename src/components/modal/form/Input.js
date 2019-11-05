@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const InputComponent = styled.input`
     box-sizing: border-box;
@@ -19,7 +20,7 @@ const InputComponent = styled.input`
     }
 `;
 
-export default class Input extends React.Component {
+class Input extends React.Component {
     render() {
         const { type, placeholder, value, onChange } = this.props;
 
@@ -33,3 +34,12 @@ export default class Input extends React.Component {
         );
     }
 }
+
+Input.propTypes = {
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+};
+
+export default Input;
