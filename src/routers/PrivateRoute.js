@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Header from '../components/main/Header';
+import LoginPage from '../components/main/LoginPage';
 
 const MainWrapper = styled.div`
     display: flex;
@@ -16,14 +16,11 @@ const PrivateRoute = ({ isAuthenticated, component: Component, ...rest }) => (
         {...rest}
         component={props =>
             isAuthenticated ? (
-                <div>
-                    <Header></Header>
-                    <MainWrapper>
-                        <Component {...props} />
-                    </MainWrapper>
-                </div>
+                <MainWrapper>
+                    <Component {...props} />
+                </MainWrapper>
             ) : (
-                <Redirect to="/" />
+                <LoginPage />
             )
         }
     />

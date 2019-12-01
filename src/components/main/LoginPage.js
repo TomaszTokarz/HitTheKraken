@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Input from '../modal/form/Input';
 import Button from '../modal/form/Button';
-import { firebase } from '../../database/firebase';
+import { logIn } from '../../database/database';
 
 const Wrapper = styled.div`
     display: flex;
@@ -44,13 +44,7 @@ export default class Login extends React.Component {
 
     logIn = event => {
         event.preventDefault();
-
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(this.state.email, this.state.password)
-            .catch(function(error) {
-                console.log(error);
-            });
+        logIn(this.state.email, this.state.password);
     };
 
     render() {

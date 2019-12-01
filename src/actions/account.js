@@ -1,6 +1,6 @@
 export const logIn = (displayName, email, uid) => ({
-    type: 'LOG_IN',
-    account: {
+    type: actionType.LOG_IN,
+    payload: {
         displayName,
         email,
         uid,
@@ -8,6 +8,11 @@ export const logIn = (displayName, email, uid) => ({
 });
 
 export const logOut = () => ({
-    type: 'LOG_OUT',
-    account: {},
+    type: actionType.LOG_OUT,
+    payload: {},
 });
+
+export const actionType = {
+    LOG_IN: 'LOG_IN',
+    LOG_OUT: 'LOG_OUT',
+};

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Button from '../modal/form/Button';
-import { logOut } from '../../database/firebase';
+import { logOut } from '../../database/database';
 
 const Wrapper = styled.div`
     display: flex;

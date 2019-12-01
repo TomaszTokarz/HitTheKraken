@@ -1,12 +1,14 @@
+import { actionType } from '../actions/account';
+
 export default (state = {}, action) => {
     switch (action.type) {
-        case 'LOG_IN':
+        case actionType.LOG_IN:
             return {
                 ...state,
-                ...action.account,
+                ...action.payload,
             };
 
-        case 'LOG_OUT':
+        case actionType.LOG_OUT:
             return {};
 
         default:

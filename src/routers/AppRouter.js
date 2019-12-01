@@ -4,9 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import { Router, Route, Switch } from 'react-router-dom';
 
 import PrivateRoute from './PrivateRoute';
-import PublicRoute from './PublicRoute';
 import Game from '../components/Game';
-import LoginPage from '../components/main/LoginPage';
 
 const App = styled.div`
     margin: 0;
@@ -41,13 +39,12 @@ export const history = createHistory();
 
 const NotFound = () => <div>Not Found</div>;
 
-const HitTheKraken = () => (
+const Routes = () => (
     <Router history={history}>
         <App>
             <Wrapper>
                 <Switch>
-                    <PublicRoute path="/" component={LoginPage} exact={true} />
-                    <PrivateRoute path="/main" component={Game} />
+                    <PrivateRoute path="/" component={Game} />
                     <Route component={NotFound} />
                 </Switch>
             </Wrapper>
@@ -55,6 +52,4 @@ const HitTheKraken = () => (
     </Router>
 );
 
-HitTheKraken.displayName = 'Hit the Kraken';
-
-export default HitTheKraken;
+export default Routes;

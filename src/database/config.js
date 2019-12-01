@@ -1,6 +1,4 @@
-import * as firebase from 'firebase';
-
-const firebaseConfig = {
+export default {
     apiKey: 'AIzaSyDMZVt7-pVPHT7UcHnWXmYKw1d_umH_MYQ',
     authDomain: 'hitthekraken.firebaseapp.com',
     databaseURL: 'https://hitthekraken.firebaseio.com',
@@ -10,11 +8,3 @@ const firebaseConfig = {
     appId: '1:617751868898:web:322cf65517ea50b40935bb',
     measurementId: 'G-TJNH8ZBNL8',
 };
-
-firebase.initializeApp(firebaseConfig);
-
-const logOut = () => {
-    firebase.auth().signOut();
-};
-
-export { firebase, logOut };
