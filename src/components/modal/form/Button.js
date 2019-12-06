@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const InputButton = styled.input`
     line-height: 40px;
@@ -17,10 +18,12 @@ const InputButton = styled.input`
     }
 `;
 
-export default class Button extends React.Component {
-    render() {
-        const { value } = this.props;
+const Button = ({ value, ...rest }) => (
+    <InputButton {...rest} type="submit" value={value} />
+);
 
-        return <InputButton type="submit" value={value} />;
-    }
-}
+Button.propTypes = {
+    value: PropTypes.string,
+};
+
+export default Button;

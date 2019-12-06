@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
+import { Router, Route, Switch } from 'react-router-dom';
 
+import PrivateRoute from './PrivateRoute';
 import Game from '../components/Game';
-import LoginPage from '../components/main/LoginPage';
 
 const App = styled.div`
     margin: 0;
@@ -34,22 +35,21 @@ const Wrapper = styled.div`
     height: 100%;
 `;
 
-const MainPage = () => <div>Main page</div>;
+export const history = createHistory();
 
-const HitTheKraken = () => (
-    <BrowserRouter>
+const NotFound = () => <div>Not Found</div>;
+
+const Routes = () => (
+    <Router history={history}>
         <App>
             <Wrapper>
                 <Switch>
-                    <Route path="/" component={LoginPage} exact={true} />
-                    <Route path="/main" component={MainPage} />
-                    <Route component={MainPage} />
+                    <PrivateRoute path="/" component={Game} />
+                    <Route component={NotFound} />
                 </Switch>
             </Wrapper>
         </App>
-    </BrowserRouter>
+    </Router>
 );
 
-HitTheKraken.displayName = 'Hit the Kraken';
-
-export default HitTheKraken;
+export default Routes;

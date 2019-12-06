@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Input from '../modal/form/Input';
 import Button from '../modal/form/Button';
+import { logIn } from '../../database/database';
 
 const Wrapper = styled.div`
     display: flex;
@@ -27,13 +28,13 @@ const LoginWindow = styled.div`
 
 export default class Login extends React.Component {
     state = {
-        login: '',
+        email: '',
         password: '',
     };
 
     loginChanged = event => {
-        const login = event.target.value;
-        this.setState(() => ({ login }));
+        const email = event.target.value;
+        this.setState(() => ({ email }));
     };
 
     passwordChanged = event => {
@@ -43,7 +44,7 @@ export default class Login extends React.Component {
 
     logIn = event => {
         event.preventDefault();
-        console.log(this.state);
+        logIn(this.state.email, this.state.password);
     };
 
     render() {
