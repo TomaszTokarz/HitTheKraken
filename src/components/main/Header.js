@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
 `;
 
-const Header = ({ name }) => (
+export const Header = ({ name }) => (
     <Wrapper>
         <div>{name}</div>
         <Button value="Abandon ship!" onClick={logOut} />
