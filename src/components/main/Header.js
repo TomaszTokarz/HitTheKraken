@@ -7,6 +7,7 @@ import Button from '../modal/form/Button';
 import { logOut } from '../../database/database';
 
 const Wrapper = styled.div`
+    width: 100%;
     display: flex;
     justify-content: space-between;
 `;

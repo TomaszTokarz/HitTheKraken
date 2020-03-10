@@ -4,7 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import { Router, Route, Switch } from 'react-router-dom';
 
 import PrivateRoute from './PrivateRoute';
-import Game from '../components/Game';
+import MainMenu from '../components/menu/MainMenu';
 
 const App = styled.div`
     margin: 0;
@@ -39,12 +39,22 @@ export const history = createHistory();
 
 const NotFound = () => <div>Not Found</div>;
 
+// Dummy Views
+const CreateGame = () => <div>Create Game</div>;
+const JoinGame = () => <div>Join Game</div>;
+const Statistics = () => <div>Statistics</div>;
+const Rules = () => <div>Rules</div>;
+
 const Routes = () => (
     <Router history={history}>
         <App>
             <Wrapper>
                 <Switch>
-                    <PrivateRoute path="/" component={Game} />
+                    <PrivateRoute path="/create" component={CreateGame} />
+                    <PrivateRoute path="/join" component={JoinGame} />
+                    <PrivateRoute path="/statistics" component={Statistics} />
+                    <PrivateRoute path="/rules" component={Rules} />
+                    <PrivateRoute path="/" component={MainMenu} />
                     <Route component={NotFound} />
                 </Switch>
             </Wrapper>
